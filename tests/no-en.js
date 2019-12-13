@@ -15,6 +15,8 @@ ruleTester.run('no-en', rule, {
     'console.log("Informational message")',
     'console.warn("Warning message")',
     'console.error("Error message")',
+    'this.log("Error message")',
+    'player.log("Error message")',
     'throw new Error("Error message")',
     'throw new Error(`Error message`)',
     'var e = new Error("Error message")',
@@ -36,7 +38,8 @@ ruleTester.run('no-en', rule, {
     'test("Test something", function(){})',
     'assert.equal(1, 2, "Should be false")',
     'assert(false, "Should be true")',
-    'assert(false, `Should be true`)'
+    'assert(false, `Should be true`)',
+    'this.controlText(this.localize("Seek to live, currently playing live"))'
   ],
   invalid: [
     {
@@ -98,6 +101,10 @@ ruleTester.run('no-en', rule, {
     {
       code: 'someValue || `Something went ${adjective} wrong`',
       errors: [{message: error, type: 'TemplateLiteral'}]
+    },
+    {
+      code: 'this.controlText("Seek to live, currently playing live")',
+      errors: [{message: error, type: 'Literal'}]
     }
   ]
 })
