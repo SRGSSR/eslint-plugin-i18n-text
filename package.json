@@ -1,5 +1,5 @@
 {
-  "name": "eslint-plugin-i18n-text",
+  "name": "eslint-plugin-i18n-text-localize",
   "version": "1.0.1",
   "description": "Disallow English text in string literals",
   "repository": "dgraham/eslint-plugin-i18n-text",
