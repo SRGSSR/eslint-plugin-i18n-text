@@ -13,7 +13,8 @@ function isConsole(node) {
       node.callee.property.name === 'debug' ||
       node.callee.property.name === 'warn' ||
       node.callee.property.name === 'error' ||
-      node.callee.property.name === 'localize')
+      node.callee.property.name === 'localize' ||
+      node.callee.property.name === 'controlText')
   )
 }
 

@@ -39,7 +39,7 @@ ruleTester.run('no-en', rule, {
     'assert.equal(1, 2, "Should be false")',
     'assert(false, "Should be true")',
     'assert(false, `Should be true`)',
-    'this.controlText(this.localize("Seek to live, currently playing live"))'
+    'this.controlText("Seek to live, currently playing live")'
   ],
   invalid: [
     {
@@ -103,7 +103,7 @@ ruleTester.run('no-en', rule, {
       errors: [{message: error, type: 'TemplateLiteral'}]
     },
     {
-      code: 'this.controlText("Seek to live, currently playing live")',
+      code: 'this.otherMethod("Seek to live, currently playing live")',
       errors: [{message: error, type: 'Literal'}]
     }
   ]
